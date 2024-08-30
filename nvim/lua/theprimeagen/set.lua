@@ -16,6 +16,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir =  "C:/dev/.vim/undodir"
 vim.opt.undofile = true
+vim.g.undotree_DiffCommand = "FC"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -29,4 +30,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
-

@@ -18,3 +18,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nv
 nvim --headless -c "e $($PSScriptRoot + "\nvim\lua\theprimeagen\packer.lua")" -c "so" -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";D:\misc", "Machine")
+
+#Install WinUtil
+irm "https://christitus.com/win" | iex
