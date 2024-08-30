@@ -1,0 +1,101 @@
+{
+    "apps": [
+        {
+            "Source": "main",
+            "Name": "7zip",
+            "Updated": "2024-08-24T18:57:52.6359544+03:00",
+            "Info": "",
+            "Version": "24.08"
+        },
+        {
+            "Source": "main",
+            "Name": "cmake",
+            "Updated": "2024-08-24T18:59:07.6362089+03:00",
+            "Info": "",
+            "Version": "3.30.2"
+        },
+        {
+            "Source": "main",
+            "Name": "dark",
+            "Updated": "2024-08-24T19:33:12.0114902+03:00",
+            "Info": "",
+            "Version": "3.14"
+        },
+        {
+            "Source": "main",
+            "Name": "fzf",
+            "Updated": "2024-08-24T22:10:10.4147055+03:00",
+            "Info": "",
+            "Version": "0.54.3"
+        },
+        {
+            "Source": "main",
+            "Name": "gcc",
+            "Updated": "2024-08-24T23:57:17.5649417+03:00",
+            "Info": "",
+            "Version": "13.2.0"
+        },
+        {
+            "Source": "main",
+            "Name": "git",
+            "Updated": "2024-08-24T18:58:25.8728918+03:00",
+            "Info": "",
+            "Version": "2.46.0"
+        },
+        {
+            "Source": "main",
+            "Name": "neovim",
+            "Updated": "2024-08-24T19:11:38.7535514+03:00",
+            "Info": "",
+            "Version": "0.10.1"
+        },
+        {
+            "Source": "main",
+            "Name": "ninja",
+            "Updated": "2024-08-24T19:09:47.2899577+03:00",
+            "Info": "",
+            "Version": "1.12.1"
+        },
+        {
+            "Source": "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json",
+            "Name": "oh-my-posh",
+            "Updated": "2024-08-24T19:47:38.3363141+03:00",
+            "Info": "",
+            "Version": "23.7.2"
+        },
+        {
+            "Source": "extras",
+            "Name": "powertoys",
+            "Updated": "2024-08-24T19:33:29.1923657+03:00",
+            "Info": "",
+            "Version": "0.83.0"
+        },
+        {
+            "Source": "extras",
+            "Name": "vcredist2022",
+            "Updated": "2024-08-24T19:13:34.0487244+03:00",
+            "Info": "",
+            "Version": "14.40.33810.0"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2024-08-24T19:27:51+03:00",
+            "Manifests": 1339
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2024-08-24T19:31:15+03:00",
+            "Manifests": 2059
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2024-08-24T19:35:56+03:00",
+            "Manifests": 469
+        }
+    ]
+}
