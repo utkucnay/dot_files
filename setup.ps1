@@ -1,7 +1,24 @@
 #Remove Files
-rm $( $env:USERPROFILE + "\AppData\Local\nvim")
-rm $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
-rm $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState")
+try {
+    rm $( $env:USERPROFILE + "\AppData\Local\nvim")
+}
+catch {
+
+}
+
+try {
+    rm $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
+}
+catch {
+
+}
+
+try {
+    rm $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState")
+}
+catch {
+
+}
 
 #Soft Link For Configs
 cmd /c mklink /D D:\misc $( $PSScriptRoot + "\misc\")
@@ -10,14 +27,20 @@ cmd /c mklink $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_
 cmd /c mklink /D $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState") $($PSScriptRoot + "\windows_terminal\LocalState")
 
 #Install Scoop Sh
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+if((scoop --version | findstr .*).IsNullOrEmpty())
+{
+    iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+}
+else
+{
+    echo "You have a scoop"
+}
 
 #Install Packages
 scoop import ./scoop/scoop_export.json
 
 #Install Packer nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 
 #Packer Install
 nvim --headless -c "e $($PSScriptRoot + "\nvim\lua\theprimeagen\packer.lua")" -c "so" -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
