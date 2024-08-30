@@ -1,3 +1,8 @@
+#Remove Files
+rm $( $env:USERPROFILE + "\AppData\Local\nvim")
+rm $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
+rm $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState")
+
 #Soft Link For Configs
 cmd /c mklink /D D:\misc $( $PSScriptRoot + "\misc\")
 cmd /c mklink /D $( $env:USERPROFILE + "\AppData\Local\nvim") $($PSScriptRoot + "\nvim\")
