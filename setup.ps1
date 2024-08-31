@@ -1,23 +1,22 @@
 #Remove Files
-try {
+if(test-path $( $env:USERPROFILE + "\AppData\Local\nvim"))
+{
     rm $( $env:USERPROFILE + "\AppData\Local\nvim")
 }
-catch {
 
-}
-
-try {
+if(test-path $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"))
+{
     rm $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
 }
-catch {
 
-}
-
-try {
+if(test-path $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"))
+{
     rm $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState")
 }
-catch {
 
+if(! (test-path $( $env:USERPROFILE + "\Documents\PowerShell")) )
+{
+    mkdir $( $env:USERPROFILE + "\Documents\PowerShell")
 }
 
 #Soft Link For Configs
@@ -27,16 +26,14 @@ cmd /c mklink $( $env:USERPROFILE + "\Documents\PowerShell\Microsoft.PowerShell_
 cmd /c mklink /D $( $env:USERPROFILE + "\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState") $($PSScriptRoot + "\windows_terminal\LocalState")
 
 #Install Scoop Sh
-if((scoop --version | findstr .*).IsNullOrEmpty())
+if(! (test-path $( $env:USERPROFILE + "\scoop")) )
 {
     iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 }
-else
-{
-    echo "You have a scoop"
-}
 
 #Install Packages
+scoop bucket add main
+scoop install git
 scoop import ./scoop/scoop_export.json
 
 #Install Packer nvim
