@@ -1,7 +1,13 @@
-$directories = "D:\Walker", "D:\Pacman"
+$directories = Get-ChildItem "D:\project" -directory | Select -ExpandProperty FullName
 
 $selected_directoy = $( $directories | fzf)
 
-cd $selected_directoy
+if ($selected_directoy -eq $null)
+{
 
-nvim $selected_directoy
+}
+else
+{
+    cd $selected_directoy
+    nvim $selected_directoy
+}
