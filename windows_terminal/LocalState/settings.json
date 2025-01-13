@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
             "command": 
             {
                 "action": "copy",
@@ -14,13 +18,7 @@
         },
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.paste"
         },
         {
             "command": 
@@ -31,6 +29,11 @@
             },
             "id": "User.splitPane.A6751878",
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         }
     ],
     "alwaysShowTabs": true,
@@ -79,19 +82,21 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "guid": "{264017cd-59cf-5a51-aa49-734018052ffe}",
+                "guid": "{3201a6f1-53e3-5feb-abf6-4a0b43456f90}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{75cd6df0-3dcf-540c-addb-4757884f8434}",
+                "guid": "{8c77e02d-673d-525c-8b38-28ad64d76c6d}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
+    "rendering.disablePartialInvalidation": true,
+    "rendering.graphicsAPI": "direct3d11",
     "schemes": 
     [
         {

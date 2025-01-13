@@ -1,4 +1,8 @@
 {
+	"dismissedMessages" : 
+	[
+		"deprecated"
+	],
 	"generatedProfiles" : 
 	[
 		"{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -11,5 +15,5 @@
 		"{5875d852-c795-5f36-8e81-2892725ee854}"
 	],
 	"persistedWindowLayouts" : [],
-	"settingsHash" : "859043ce25b08337-01db011c84b78c59"
+	"settingsHash" : "f75abc8e38b7b847-01db480642aa4de0"
 }

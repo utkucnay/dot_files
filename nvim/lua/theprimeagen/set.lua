@@ -30,3 +30,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+vim.api.nvim_create_user_command('WRun', function ()
+    pcall(function ()
+        vim.fn.Preserve("./Scripts/install.ps1")
+    end)
+end, {})
